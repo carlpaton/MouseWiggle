@@ -29,7 +29,7 @@ namespace MouseWiggle.WiggleModes
                 x += 50;
                 y += 50;
 
-                if (x >= 500)
+                if (x > 500)
                 {
                     x = 0;
                     y = 0;
