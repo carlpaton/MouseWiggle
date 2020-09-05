@@ -2,6 +2,7 @@
 using MouseWiggle.Enums;
 using MouseWiggle.WiggleModes.Interfaces;
 using System;
+using System.Drawing;
 using System.Threading;
 using System.Windows.Forms;
 
@@ -23,8 +24,8 @@ namespace MouseWiggle.WiggleModes
 
             while (true)
             {
-                Console.WriteLine("Sleep for a minute... x={0} y={1}", x, y);
-                Cursor.Position = new System.Drawing.Point(x, y);
+                Console.WriteLine("Sleep... x={0} y={1}", x, y);
+                Cursor.Position = new Point(x, y);
 
                 x += 50;
                 y += 50;
@@ -37,7 +38,7 @@ namespace MouseWiggle.WiggleModes
                     FirstMessage();
                 }
 
-                Thread.Sleep(EpochConstants.ONE_MINUTE_IN_MILLISECONDS);
+                Thread.Sleep(EpochConstants.ONE_SECOND_IN_MILLISECONDS);
             }
         }
 

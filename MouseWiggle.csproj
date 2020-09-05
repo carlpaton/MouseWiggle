@@ -45,11 +45,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Constants\CoordinateConstants.cs" />
     <Compile Include="Constants\EpochConstants.cs" />
+    <Compile Include="Entities\ScreenModels.cs" />
+    <Compile Include="Enums\CursorMoveEnums.cs" />
     <Compile Include="Enums\WiggleModeEnums.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\CursorService.cs" />
+    <Compile Include="Services\Interfaces\ICursorService.cs" />
     <Compile Include="WiggleModes\Interfaces\IWiggle.cs" />
+    <Compile Include="WiggleModes\SpiralCenterOutCounterClockwise.cs" />
     <Compile Include="WiggleModes\TopLeftTowardsCenter.cs" />
   </ItemGroup>
   <ItemGroup>
