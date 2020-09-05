@@ -2,6 +2,7 @@
 {
     public enum WiggleModeEnums
     {
-        TopLeftTowardsCenter
+        TopLeftTowardsCenter,
+        SpiralCenterOutClockWise
     }
 }
