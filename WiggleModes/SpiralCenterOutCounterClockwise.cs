@@ -1,5 +1,6 @@
 ﻿using MouseWiggle.Constants;
 using MouseWiggle.Enums;
+using MouseWiggle.Helpers;
 using MouseWiggle.Services.Interfaces;
 using MouseWiggle.WiggleModes.Interfaces;
 using System;
@@ -26,6 +27,7 @@ namespace MouseWiggle.WiggleModes
         {
             var increment = 3;
             var counter = 0;
+            var counterPreventPowerSave = 0;
 
             var screenCoordinate = _cursorService
                 .GetScreenCoordinate();
@@ -99,6 +101,13 @@ namespace MouseWiggle.WiggleModes
 
                 if (counter >= 4)
                     counter = 0;
+
+                if (counterPreventPowerSave % 1000 == 0) 
+                {
+                    PowerHelper.PreventPowerSave();
+                    Console.WriteLine("XXXXXXXXXXXXXX Ran PreventPowerSave...");
+                }
+                counterPreventPowerSave++;
             }
         }
 

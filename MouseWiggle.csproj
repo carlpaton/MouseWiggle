@@ -50,6 +50,7 @@
     <Compile Include="Entities\ScreenModels.cs" />
     <Compile Include="Enums\CursorMoveEnums.cs" />
     <Compile Include="Enums\WiggleModeEnums.cs" />
+    <Compile Include="Helpers\PowerHelper.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\CursorService.cs" />

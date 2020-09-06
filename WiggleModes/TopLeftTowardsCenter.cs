@@ -1,5 +1,6 @@
 ﻿using MouseWiggle.Constants;
 using MouseWiggle.Enums;
+using MouseWiggle.Helpers;
 using MouseWiggle.WiggleModes.Interfaces;
 using System;
 using System.Drawing;
@@ -19,8 +20,10 @@ namespace MouseWiggle.WiggleModes
         public void WiggleCursor()
         {
             FirstMessage();
+
             var x = 0;
             var y = 0;
+            var counterPreventPowerSave = 0;
 
             while (true)
             {
@@ -37,6 +40,13 @@ namespace MouseWiggle.WiggleModes
                     Console.Clear();
                     FirstMessage();
                 }
+
+                if (counterPreventPowerSave % 500 == 0)
+                {
+                    PowerHelper.PreventPowerSave();
+                    Console.WriteLine("XXXXXXXXXXXXXX Ran PreventPowerSave...");
+                }
+                counterPreventPowerSave++;
 
                 Thread.Sleep(EpochConstants.ONE_SECOND_IN_MILLISECONDS);
             }
